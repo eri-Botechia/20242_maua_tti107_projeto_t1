@@ -1,3 +1,4 @@
+-----
 <style>
     .icon{
     width : 24px ; 
@@ -28,6 +29,7 @@
         margin: 5px auto;
     }
 </style>
+-----
 
 ___Projeto 20242_maua_tti107_projeto_t1___
 # FUTURAMA CHARACTERS
