@@ -1,33 +1,4 @@
-<style>
-    .icon{
-    width : 24px ; 
-    height: 24px;
-    display: inline-block;
-    }
 
-    .container-flex-row-center{
-        width: 90%;
-        margin: 10px 5%;
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: space-around;
-        padding: 1rem;
-
-    }
-
-    .social-list{
-      display: block;
-      text-align: left;
-      list-style-position: inside;
-    }
-
-    .social-list li{
-        width: 100%;
-        display: block;
-        margin: 5px auto;
-    }
-</style>
 
 ___Projeto 20242_maua_tti107_projeto_t1___
 # FUTURAMA CHARACTERS
@@ -51,30 +22,69 @@ O repositorio consta do projeto 1 da materia tti107 frontend do IMT com a temati
 
 
 ## LINGUAGENS E FRAMEWORKS:
-<div class="container-flex-row-center">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"  class="icon"/> 
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" class="icon"/> 
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"  class="icon"/>
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" class="icon"/>
-   <img src="https://necolas.github.io/normalize.css/logo.svg" class="icon">
+<div style="        width: 90%;
+        margin: 10px 5%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem;
+"> 
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"  style="    width : 24px ; 
+    height: 24px;
+    display: inline-block;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" style="    width : 24px ; 
+    height: 24px;
+    display: inline-block;"/> 
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"  style="    width : 24px ; 
+    height: 24px;
+    display: inline-block;"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" style="    width : 24px ; 
+    height: 24px;
+    display: inline-block;"/>
+   <img src="https://necolas.github.io/normalize.css/logo.svg" style="    width : 24px ; 
+    height: 24px;
+    display: inline-block;"/>
 </div>
 
 ## RESULTADOS  E DEPLOY:
 O deploy se encontra no link: 
 ### TELA DESKTOP:
-<div class="container-flex-row-center">
+<div  style="        width: 90%;
+        margin: 10px 5%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem;
+">
 <img src="https://i.ibb.co/VDpqWWM/projeto-imt-frontend-1-desktop.png" alt="projeto-imt-frontend-1-desktop" border="0">
 </div>
 
 ### TELA IPAD:
-<div class="container-flex-row-center">
+<div  style="        width: 90%;
+        margin: 10px 5%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem;">
 <img src="https://i.ibb.co/L0p4yxL/projeto-imt-frontend-1-tablet.png" alt="projeto-imt-frontend-1-tablet" border="0" height="400px">
 </div>
 
 ### TELA MOBILE:
 
-<div class="container-flex-row-center">
-<img src="https://i.ibb.co/8sYyTv8/projeto-imt-frontend-1-mobile.png" alt="projeto-imt-frontend-1-mobile" border="0" height="400px">
+<div style="        width: 90%;
+        margin: 10px 5%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem;
+">
+<img src="https://i.ibb.co/8sYyTv8/projeto-imt-frontend-1-mobile.png"
+        style="height: 400px;
+">
 </div>
 
 ## AUTORA DO PROJETO
@@ -89,9 +99,13 @@ O deploy se encontra no link:
     <hr/>
 </div>
  <ul class="social-list">
-        <li> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" class="icon"/> <a href="https://www.linkedin.com/in/botechia-erika" > botechia-erika
+        <li> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" style="    width : 24px ; 
+    height: 24px;
+    display: inline-block;"/> <a href="https://www.linkedin.com/in/botechia-erika" > botechia-erika
         </li>
-                <li> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" class="icon"/>  <a href="https://www.linkedin.com/in/botechia-erika" >@Eri-Botechia
+                <li> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" style="    width : 24px ; 
+    height: 24px;
+    display: inline-block;"/>  <a href="https://www.linkedin.com/in/botechia-erika" >@Eri-Botechia
         </a></li>
                         <li>Portfolio:  <a href="https://botechia-dev.surge.sh" > https://botechia-dev.surge.sh
         </li>
