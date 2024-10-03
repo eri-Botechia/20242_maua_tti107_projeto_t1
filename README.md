@@ -4,7 +4,7 @@ ___Projeto 20242_maua_tti107_projeto_t1___
 # FUTURAMA CHARACTERS
 
 O repositorio consta do projeto 1 da materia tti107 frontend do IMT com a tematica de personagens do seriado futurama
-
+### DEPLOY: <a href="https://eri-botechia.github.io/20242_maua_tti107_projeto_t1/">https://eri-botechia.github.io/20242_maua_tti107_projeto_t1/v</a>
 ## Requisitos Fundamentais
 ✅ Uso de Bootstrap para estilizacao  
 ✅  Uso de Breakpoints para Design Responsivo  
@@ -48,7 +48,7 @@ O repositorio consta do projeto 1 da materia tti107 frontend do IMT com a temati
 </div>
 
 ## RESULTADOS  E DEPLOY:
-O deploy se encontra no link: 
+O deploy se encontra no link: <a href="https://eri-botechia.github.io/20242_maua_tti107_projeto_t1/">https://eri-botechia.github.io/20242_maua_tti107_projeto_t1/v</a>
 ### TELA DESKTOP:
 <div  style="        width: 90%;
         margin: 10px 5%;
