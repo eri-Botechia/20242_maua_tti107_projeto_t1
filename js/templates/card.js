@@ -9,7 +9,7 @@ const card = async () => {
                    <h3>${characters.name.first} - #${index + 1}</h3>
                 </div>
                 <div class="card-container">
-                        <img src=${characters.images.main.includes("https://static.wikia.nocookie.net/") ?('assets/images/futurama.png'):(characters.images.main) } alt="personagem imagem" class="character__img rounded"/>
+                        <img src=${characters.images.main} alt="personagem imagem" class="character__img rounded"/>
                     </div>
                     </div>
                     <div class="card-footer border-none text-center">
