@@ -544,3 +544,6 @@ INSERT INTO days_of_month (day) VALUES
 ('31');
 
 
+CREATE TABLE users(
+    id VA
+)
