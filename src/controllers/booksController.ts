@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-export const getCollection = async(req: Request, res: Response) => {
-    const COLLECTIONS_HTML = 
-    res.status(200).sendFile("/pages/products.html", { root: 'public' });	
+
+export const getSlash = async(req: Request, res: Response) => {
+    res.status(200).json({message: 'Hello, CLUB'  });	
 };
 export const getAll= async(req: Request, res: Response) => {
     res.status(200).json({message: 'LIST'  });    

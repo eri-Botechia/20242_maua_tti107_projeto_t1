@@ -9,9 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getSlash = void 0;
+exports.getApi = exports.getSlash = void 0;
 const getSlash = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.status(200).sendFile('index.html', { root: 'public' });
 });
 exports.getSlash = getSlash;
+const getApi = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.status(200).sendFile('api.html', { root: 'public' });
+});
+exports.getApi = getApi;
 //# sourceMappingURL=mainController.js.map

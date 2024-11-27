@@ -1,41 +1,39 @@
 import dotenv from 'dotenv';
 dotenv.config();
-const port = Number(process.env.PORT) ||3000;
-
+const port = Number(process.env.PORT) || Number(3000)
 import express, { Application } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
-import mainRouter from '../routes/mainRouter';
-import productsRouter from '../routes/api/productsRouter';
+import mainRouter from '../router/mainRouter';
+import apiRouter from '../router/apiRouter';
 
-import apiRouter from '../routes/apiRouter';
-import usersRouter from '../routes/api/usersRouter';
-
-import docsRouter from '../routes/docs/docsRouter';
+import usersRouter from '../router/api/usersRouter';
+import booksRouter from '../router/booksRouter';
+import docsRouter from '../router/docs/docsRouter';
 
 /*Esse é o modelo de servidor a ser usado em index*/ 
 
 export class Server {
     private app: Application;
-    private port: number=port;
-    private mainPaths ={
-        main: '/'
-    }
+    private port:Number = port;
     private apiPaths = {
         api: '/api',
         users: '/api/users',
-        posts: '/api/posts',
-        products: '/api/products'
+        posts: '/api/posts'
     };
-
+    private mainPaths = {
+        main: '/'
+    };
     private docsPaths = {
         docs: '/docs'
     };
-
+    private booksPaths = {
+        docs: '/livros'
+    };
     constructor() {
         this.app = express();
-        this.port ;
+        this.port
         
         this.middlewares();
         this.routes();
@@ -65,8 +63,9 @@ export class Server {
 
         this.app.use(this.apiPaths.users, usersRouter);
         this.app.use(this.mainPaths.main, mainRouter);
-        this.app.use(this.apiPaths.products,productsRouter)
+
         this.app.use(this.docsPaths.docs, docsRouter);
+        this.app.use(this.booksPaths.docs, booksRouter);
     }
 
     listen() {
