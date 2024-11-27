@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-size: 16px;
+  --color-black: #000;
+}
+
+#id-A {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 2rem;
+  display: grid;
+  max-width: 1fr;
+  height: 110px;
+  background-color: var(--color-black);
+}
+
+.logoNav {
+  width: 95px;
+  height: 100px;
+}
+
+.navigation{
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 5rem;
+  right: 5rem;
+  height: 80px;
+  background: var(--color-black);
+}

@@ -1,0 +1,24 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+:root{
+    --color-greenDefault: #89ec7a;
+    --light-blueNaive:rgb(22, 228, 255);
+}
+
+body{
+    max-width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    width: 1fr;
+}
+
+
+.header{
+    background-color: var(--color-greenDefault);
+}

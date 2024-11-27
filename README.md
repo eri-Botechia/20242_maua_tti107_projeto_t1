@@ -1,8 +1,11 @@
 
+## Projeto em Building Process 🚧
 
-___Projeto 20242_maua_tti107_projeto_t1___
-# FUTURAMA CHARACTERS
 
+## Overview do Projeto
+🚧 Secao em Building Process
+
+<<<<<<< HEAD
 O repositorio consta do projeto 1 da materia tti107 frontend do IMT com a tematica de personagens do seriado futurama
 ### DEPLOY: <a href="https://eri-botechia.github.io/20242_maua_tti107_projeto_t1/">https://eri-botechia.github.io/20242_maua_tti107_projeto_t1/</a>
 ## Requisitos Fundamentais
@@ -12,41 +15,25 @@ O repositorio consta do projeto 1 da materia tti107 frontend do IMT com a temati
 ✅  Cards com bordes visiveis  
 ✅  Cards md com 6 colunas  
 ✅ Figuras do card com bordes arredondados
+=======
+## Cronograma de Entregas Baseado em Branchs:
+- main: sera utilizada e atualizada no momento em que projeto for totalmente concluido para evitar conflitos de versoes, a versao final do projeto consta de a links de documentacao, anexos informativos, manuais da plataforma, branding book, codigo desenvolvido para solucao e link de solucao digital funcional formando assim um software completo que inclue alguns anexos extras associado a design, marketing e modelos de negocios.
+- pre-main: sera utilizada para subir desenvolvimento das branchs parciais desenvolvidas durante o projeto a fim de unicar uma rama previa a versao concluida do projeto, esta ultima versao sera a que sera mergeada em branch main
 
-## Requisitos Adicionais Implementados
-✅ Uso de stylesheet anexa com conteudo da biblioteca Normalize.css para estilizacao padronizada de browsers  
-✅ Stylesheet anexa globals.css para adicionar estilos css customizados extras nao incluidos em bootstrap  
-✅ diretorio js com app.js ligada a index.html em padrao modular      
-✅ uso da tecnica de fetch para que conteudos exibidos venham de uma app externa   
-✅ renderizacao dinamica de cards a partir de template em js modular com requisitos necessarios implementados
+## Estrutura de Diretorios do Projeto
+🚧 Secao em Building Process
+>>>>>>> 53c8c7f3887296e63875cf7f5c260b332a4175c2
 
+## Tecnologias, Frameworks, Bibliotecas e Ferramentas Usadas:
+🚧 Secao em Building Process
 
-## LINGUAGENS E FRAMEWORKS:
-<div style="        width: 90%;
-        margin: 10px 5%;
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: space-around;
-        padding: 1rem;
-"> 
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"  style="    width : 24px ; 
-    height: 24px;
-    display: inline-block;"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" style="    width : 24px ; 
-    height: 24px;
-    display: inline-block;"/> 
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"  style="    width : 24px ; 
-    height: 24px;
-    display: inline-block;"/>
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" style="    width : 24px ; 
-    height: 24px;
-    display: inline-block;"/>
-   <img src="https://necolas.github.io/normalize.css/logo.svg" style="    width : 24px ; 
-    height: 24px;
-    display: inline-block;"/>
-</div>
+## Entrega Final e Apresentacao de Resultados:
+🚧 Secao em Building Process
 
+## Autor:
+🚧 Secao em Building Process
+
+<<<<<<< HEAD
 ## RESULTADOS  E DEPLOY:
 O deploy se encontra no link: <a href="https://eri-botechia.github.io/20242_maua_tti107_projeto_t1/">https://eri-botechia.github.io/20242_maua_tti107_projeto_t1/">https://eri-botechia.github.io/20242_maua_tti107_projeto_t1/</a>
 ### TELA DESKTOP:
@@ -110,3 +97,5 @@ O deploy se encontra no link: <a href="https://eri-botechia.github.io/20242_maua
                         <li>Portfolio:  <a href="https://botechia-dev.surge.sh" > https://botechia-dev.surge.sh
         </li>
     </ul>
+=======
+>>>>>>> 53c8c7f3887296e63875cf7f5c260b332a4175c2
