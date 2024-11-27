@@ -1,0 +1,17 @@
+[
+    {
+        "id":"",
+        "title":"",
+        "artist":"",
+        "album":"",
+        "genre":"",
+        "year":"",
+        "duration":"",
+        "plays":"",
+        "likes":0,
+        "dislikes": 0,
+        "score":0,
+        "urlCover":"",
+        "code2Url":""
+    }
+]

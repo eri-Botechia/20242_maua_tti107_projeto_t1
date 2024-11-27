@@ -1,10 +1,10 @@
 let offset = 0;
 let limit = 6;
 
-const BASE_URL = `https://api.sampleapis.com/futurama/characters`;
+const BASE_URL = `http://localhost:9475`;
 
-const fetchData = () => {
-    return fetch(BASE_URL)
+const fetchData = (path = "") => {
+    return fetch(`${BASE_URL}/${path}`)
         .then((response) => response.json())
         .catch((error) => {
             console.log(error);
@@ -15,4 +15,9 @@ const fetchData = () => {
         });
 };
 
-export default fetchData;
+const fetchNotebooks = fetchData("notebooks");
+const fetchDataObj = {
+    notebooks: fetchNotebooks
+};
+
+export default fetchDataObj;

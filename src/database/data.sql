@@ -544,3 +544,40 @@ INSERT INTO days_of_month (day) VALUES
 ('31');
 
 
+CREATE TABLE users(
+    id VARCHAR(80) NOT NULL UNIQUE PRIMARY KEY,
+    full_name VARCHAR(600) NOT NULL,
+    first_email VARCHAR(200) NOT NULL UNIQUE,
+    password_hash VARCHAR(100) NOT NULL,
+    created_at
+);
+
+
+
+CREATE TABLE address(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, 
+    adress_tag VARCHAR(80) NOT NULL, 
+    id_locations INTEGER NOT NULL, 
+    id_agendas INTEGER NOT NULL,
+    FOREIGN KEY (id_locations) REFERENCES locations(id)
+    ON UPDATED CASCADE ON DELETE CASCADE,
+    FOREIGN KEY(id_agendas) REFERENCES agendas(id)
+    ON UPDATE CASCADE ON DELETE CASCADE
+)
+
+CREATE TABLE books (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    id_users VARCHAR(100) NOT NULL,
+    ISBN VARCHAR(100) NOT NULL UNIQUE,
+    title VARCHAR(140) NOT NULL,
+    year_released INTEGER NOT NULL,
+    genre INTEGER NOT NULL,
+    pages INTEGER,
+    likes_count INTEGER DEFAULT 0,
+    dislikes_count INTEGER DEFAULT 0,
+    publishier VARCHAR(140) NOT NULL,
+    created_at VARCHAR(40) NOT NULL DEFAULT DATETIME('now')
+    FOREIGN KEY (id_users) REFERENCES users(id)
+    ON UPDATED CASCADE ON DELETE CASCADE
+);
+

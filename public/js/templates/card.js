@@ -1,23 +1,31 @@
-import fetchData from "../data/fetchData.js";
+import fetchDataObj from "../data/fetchData.js";
 
 const card = async () => {
-    const charactersList = await fetchData();
-    return charactersList.map((characters, index) => `
-        <li class="col-sm-12 col-md-6 col-lg-4 my-4">
+    try {
+        const [itemsList] = await Promise.all([fetchDataObj.notebooks]);
+        console.log('Fetched data:', itemsList); // Log the fetched data
+        if (!Array.isArray(itemsList.result)) {
+            throw new Error('Data is not an array');
+        }
+        return itemsList.result.map((items, index) => `
+            <li class="col-sm-12 col-md-6 col-lg-4 my-4">
                 <article class="p-2 card">
-                <div class="card-header bg-light border-none text-center">
-                   <h3>${characters.name.first} - #${index + 1}</h3>
-                </div>
-                <div class="card-container">
-                        <img src=${characters.images.main.includes("https://static.wikia.nocookie.net/") ?('assets/images/futurama.png'):(characters.images.main) } alt="personagem imagem" class="character__img rounded"/>
+                    <div class="card-header bg-light border-none text-center">
+                        <h3>${items.title} - #${index + 1}</h3>
                     </div>
+                    <div class="card-container">
+                        <img src="${items.mediaEndpoint.img !== "" ? (items.mediaEndpoint.img):('assets/images/futurama.png')}" alt="imagem do card" class="character__img rounded"/>
                     </div>
                     <div class="card-footer border-none text-center">
-                <p>Character Ocuppation: <br/><strong>${characters.occupation|| "null"}</strong></p>
-                </div>
-                    </article>
-                </li>
-    `).join(''); // Join the array into a single string
+                        <p>Character Occupation: <br/><strong>${items.author}</strong></p>
+                    </div>
+                </article>
+            </li>
+        `).join(''); // Join the array into a single string
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return '';
+    }
 };
 
 export default card;
