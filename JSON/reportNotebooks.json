@@ -1,0 +1,48 @@
+[
+    {
+        "id":"99df24aa-5237-41d2-bc5a-919c6771b583",
+        "title":"Notebook 1",
+        "releaseYear":"2024",
+        "author":"24.01905-4",
+        "mediaEndpoint":{
+            "img":"assets/notebooks/images/99df24aa-5237-41d2-bc5a-919c6771b583.png",
+            "pdf":"assets/notebooks/pdfs/99df24aa-5237-41d2-bc5a-919c6771b583.pdf",
+            "icons":"assets/notebooks/icons/99df24aa-5237-41d2-bc5a-919c6771b583.pdf", 
+            "video":""
+        },
+        "orientation":"TP2-2024-1",
+        "score":0,
+        "likes":0,
+        "dislikes":0
+    },
+    {
+        "id":"41ffd5d3-42e7-4be5-99c4-bbd952873155",
+        "title":"Notebook 2",
+        "releaseYear":"2024",
+        "author":"24.01905-4",
+        "mediaEndpoint":{
+            "img":"/assets/notebooks/images/41ffd5d3-42e7-4be5-99c4-bbd952873155.png",
+            "pdf":"/assets/notebooks/pdfs/41ffd5d3-42e7-4be5-99c4-bbd952873155.pdf",
+            "video":""
+        },
+        "orientation":"TP1-2024-1",
+        "score":0,
+        "likes":0,
+        "dislikes":0
+    },
+    {
+        "id":"99df24aa-5237-41d2-bc5a-919c6771b585",
+        "title":"Notebook 3",
+        "releaseYear":"2024",
+        "author":"24.01905-4",
+        "mediaEndpoint":{
+            "img":"/assets/notebooks/images/99df24aa-5237-41d2-bc5a-919c6771b585.png",
+            "pdf":"/assets/notebooks/pdfs/99df24aa-5237-41d2-bc5a-919c6771b585.pdf",
+            "video":""
+        },
+        "orientation":"TP2-2024-1",
+        "score":0,
+        "likes":0,
+        "dislikes":0
+    }   
+]

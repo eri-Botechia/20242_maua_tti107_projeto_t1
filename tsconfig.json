@@ -17,7 +17,7 @@
     },
     "pretty":true,
     "include": [
-        "./src/", 
+        "./src/",  "./JSON/"
     ],
     "exclude": [
         "/node_modules/"

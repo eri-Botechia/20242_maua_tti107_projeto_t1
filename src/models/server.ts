@@ -9,7 +9,7 @@ import mainRouter from '../router/mainRouter';
 import apiRouter from '../router/apiRouter';
 
 import usersRouter from '../router/api/usersRouter';
-import booksRouter from '../router/booksRouter';
+import notebooksRouter from '../router/notebooksRouter';
 import docsRouter from '../router/docs/docsRouter';
 
 /*Esse é o modelo de servidor a ser usado em index*/ 
@@ -28,8 +28,8 @@ export class Server {
     private docsPaths = {
         docs: '/docs'
     };
-    private booksPaths = {
-        docs: '/livros'
+    private notebooksPaths = {
+        notebooks: '/notebooks'
     };
     constructor() {
         this.app = express();
@@ -65,7 +65,7 @@ export class Server {
         this.app.use(this.mainPaths.main, mainRouter);
 
         this.app.use(this.docsPaths.docs, docsRouter);
-        this.app.use(this.booksPaths.docs, booksRouter);
+        this.app.use(this.notebooksPaths.notebooks, notebooksRouter);
     }
 
     listen() {
