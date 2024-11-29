@@ -16,20 +16,20 @@ exports.deleteItem = exports.putItem = exports.postItem = exports.getItem = expo
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const getNotebooks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.status(301).redirect('/notebooks/list');
+});
+exports.getNotebooks = getNotebooks;
+const getAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const readStream = fs_1.default.readFileSync(path_1.default.join(__dirname, './../../JSON', 'reportNotebooks.json'), 'utf-8');
-        const readFile = JSON.parse(readStream);
-        console.log(readFile);
-        res.status(200).json({ message: 'notebooks', result: readFile });
+        const newLocal = JSON.parse(readStream);
+        console.log(newLocal);
+        res.status(200).json({ message: 'notebooks', result: newLocal });
     }
     catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error reading file' });
     }
-});
-exports.getNotebooks = getNotebooks;
-const getAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.status(200).json({ message: 'LIST' });
 });
 exports.getAll = getAll;
 const getItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

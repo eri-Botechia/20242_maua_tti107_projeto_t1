@@ -4,8 +4,9 @@ const htmlList = document.getElementById('htmlList');
 
 const render = async () => {
     document.addEventListener('DOMContentLoaded', async () => {
-        const pokemonHtml = await card();
-        htmlList.innerHTML += pokemonHtml;
+        const cardHTML1 = await card();
+        htmlList.innerHTML += `<ul class="row justify-content-center">${cardHTML1}
+        </ul>`;
     });
 };
 

@@ -39,6 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mainController = __importStar(require("../controllers/mainController"));
 const router = express_1.default.Router();
-router.get('/', mainController.getSlash);
+router.get('/', mainController.getMain);
+router.get('/pages/notebooks', mainController.getNotebooks);
 exports.default = router;
 //# sourceMappingURL=mainRouter.js.map

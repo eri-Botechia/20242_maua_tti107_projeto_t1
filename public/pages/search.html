@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>IMT.Colab</title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/globals.css">
+    <link rel="stylesheet" href="/stylesheets/grids.css">
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+
+</head>
+
+<body>
+    <header class=" header">
+        <div class="container">
+            <div class="row header-1">
+                <h1 class="col-xs-12 col-md-4">
+                    <a href="/" class="logo-link">
+                        <figure class="header__figure-logo">
+                            <img src="/assets/brand/logo.png" alt="logo" class="logoHeader">
+                            <caption class="logo-text">IMT.Colab</caption>
+                        </figure>
+                    </a>
+                </h1>
+                <form action="" method="" class="col-xs-12 col-md-4">
+                    <input type="search" name="searchName" id="searchName" class="inputSearch"
+                        placeholder="buscar notebooks..." />
+                    <label for="searchName" class="fas fa-search"></label>
+                </form>
+
+                <div class="col-xs-12 col-md-4 icons">
+                    <a class="menu-link fas fa-envelope" href="/pages/contact"></a>
+                    <a class="menu-link fas fa-user-circle" href="/users/login" id="login-btn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="header-2 ">
+                <ul class="menu row">
+                    <li class="menu-item col-xs-12 col-md-6 col-lg-3">
+                        <a href="/pages/notebooks" class="menu-link">
+                            NOTEBOOKS
+                        </a>
+                    </li>
+                    <li class="menu-item col-xs-12 col-md-6 col-lg-3">
+                        <a href="/pages/search" class="menu-link">
+                            SEARCH
+                        </a>
+                    </li>
+                    <li class="menu-item col-xs-12 col-md-6 col-lg-3">
+                        <a href="/pages/tools" class="menu-link">
+                            TOOLS
+                        </a>
+                    </li>
+                    <li class="menu-item col-xs-12 col-md-6 col-lg-3">
+                        <a href="/users/classrooms" class="menu-link">
+                            CLASSROOMS
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        
+            <section class="container" id="section">
+                <div class="content" id="result"></div>
+            </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer__minimap row">
+                <section class="footer__section col-xs-12 col-md-4">
+                    <header class="footer__section-header">
+                        <h2>IMT.Colab</h2>
+                        <img src="/assets/brand/logo.png" alt="img da seçao" class="footer__section-img">
+                    </header>
+                    <ul class="footer__section-list">
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/pages/notebooks">NOTEBOOKS</a></li>
+                        <li><a href="/pages/search">SEARCH</a></li>
+                        <li><a href="/pages/tools">TOOLS</a></li>
+                        <li><a href="/users/classrooms">CLASSROOMS</a></li>
+                        <li><a href="/users/login">LOGIN</a></li>
+                    </ul>
+                </section>
+                <section class="footer__section col-xs-12 col-md-4">
+                    <header class="footer__section-header">
+                        <h2>IMT</h2>
+                        <img src="/assets/brand/logo-IMT.png" alt="img da seçao" class="footer__section-img">
+                    </header>
+                    <ul class="footer__section-list">
+                        <li><a href="https://www2.maua.br" target="_blank">MAUA BR</a></li>
+                        <li><a href="#">INSTAGRAM</a></li>
+                        <li><a href="#">LINKEDIN</a></li>
+                    </ul>
+                </section>
+                <section class="footer__section col-xs-12 col-md-4">
+                    <header class="footer__section-header">
+                        <h2>Contato</h2>
+                        <img src="/assets/icons/bookContact.png" alt="img da seçao" class="footer__section-img">
+                    </header>
+                    <ul class="footer__section-list">
+                        <li><a href="/pages/contact">FALE CONOSCO</a></li>
+                        <li><a href="https://github.com/eri-Botechia" target="_blank">GitHub @EriBotechia</a></li>
+                        <li><a href="#">LINKEDIN</a></li>
+                        <li><a href="#">PORTFOLIO</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="footer-copy">
+                <div class="copyMade__footer col-xs-12 col-sm-6 ">
+                    <label for="#" id="pageTitle">&copy IMT.Colab 2024</label>
+                </div>
+                <div class="copyMade__footer col-xs-12 col-sm-6">
+
+                    <p>Made with ❤️ by <a href="http://github.com/eri-Botechia" target="_blank">@eri-Botechia</a></p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="/imt_colab_modules/app.js">
+
+    </script>
+</body>
+
+</html>

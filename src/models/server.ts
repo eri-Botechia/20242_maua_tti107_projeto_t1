@@ -11,6 +11,7 @@ import apiRouter from '../router/apiRouter';
 import usersRouter from '../router/api/usersRouter';
 import notebooksRouter from '../router/notebooksRouter';
 import docsRouter from '../router/docs/docsRouter';
+import pagesRouter from '../router/pages/pagesRouter';
 
 /*Esse é o modelo de servidor a ser usado em index*/ 
 
@@ -31,6 +32,10 @@ export class Server {
     private notebooksPaths = {
         notebooks: '/notebooks'
     };
+
+    private pagesPaths ={
+        pages: '/pages'
+    }
     constructor() {
         this.app = express();
         this.port
@@ -63,7 +68,7 @@ export class Server {
 
         this.app.use(this.apiPaths.users, usersRouter);
         this.app.use(this.mainPaths.main, mainRouter);
-
+        this.app.use(this.pagesPaths.pages, pagesRouter);
         this.app.use(this.docsPaths.docs, docsRouter);
         this.app.use(this.notebooksPaths.notebooks, notebooksRouter);
     }

@@ -1,0 +1,61 @@
+.header__figure-logo {
+    display: flex;
+    height: 100%;
+    flex-flow: column wrap;
+    padding: 0rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+.logoHeader {
+    width: 45px;
+    height: 45px;
+    margin: 10px auto;
+}
+
+.menu-item {
+    height: 40px;
+    text-align: center;
+    margin: 5px auto;
+
+}
+
+.menu-link {
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.menu-link:hover {
+    color: var(--black);
+}
+
+.footer__section-img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    background-color: var(--whitesmoke);
+    border-radius: 50%;
+    padding: 1rem;
+    margin: 10px auto;
+}
+
+
+.logo-link {
+    color: var(--black);
+}
+
+.logo-link:hover {
+    color: var(--color-IMT);
+}
+
+
+.footer__section-list li a {
+    color: var(--whitesmoke);
+}
+
+
+.footer__section-list li a:hover {
+    color: var(--color-black);
+}

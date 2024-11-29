@@ -10,7 +10,7 @@
     --border-bottom: #232323;
     --white-default: #fff;
     --color-violet:  linear-gradient(to top, #09203f 0%, #537895 100%);
-
+    --color-darkBlue: #172A38;
 }
 
 .border-none{
@@ -23,6 +23,9 @@ body {
   grid-template-rows: 100%;
   min-height: 100vh;
   max-width: 1fr;
+background-color: var(--color-darkBlue);
+  font-family: 'Roboto', sans-serif;
+
 }
 
 
@@ -38,6 +41,7 @@ body {
     height: 110px;
     border-bottom: 2px solid var(--border-bottom);
     background: var(--white-default);
+    border-radius:0 0 30px 30px ;
 }
 
 
@@ -47,32 +51,22 @@ body {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 100%;
-    padding-top: 80px;
+    margin-top: 120px;
     padding-bottom: 80px;
-    min-height: 100vh;
+    min-height: calc(100%-150px);
     max-width: 1fr;
 }
 
-.footer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 998;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 100%;
-    height: 60px;
-    border-top: 2px solid var(--border-bottom);
-    background-color: var(--white-default);
-}
+
 
 .card{
-    min-height: 60vh;
+    min-height: 500px;
     display: flex;
     flex-flow: column wrap;
+    max-width: 300px;
     align-items: center;
     justify-content: space-around;
+    margin: 10px auto;
 }
 
 .title__box, .footer__box{
@@ -97,4 +91,18 @@ body {
     min-height: 60px;
     background: var(--color-violet);
     margin:10px auto;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    height: 60px;
+    border-top: 2px solid var(--border-bottom);
+    background-color: var(--white-default);
+    border-radius:30px 30px 0 0 ;
 }

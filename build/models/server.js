@@ -16,6 +16,7 @@ const apiRouter_1 = __importDefault(require("../router/apiRouter"));
 const usersRouter_1 = __importDefault(require("../router/api/usersRouter"));
 const notebooksRouter_1 = __importDefault(require("../router/notebooksRouter"));
 const docsRouter_1 = __importDefault(require("../router/docs/docsRouter"));
+const pagesRouter_1 = __importDefault(require("../router/pages/pagesRouter"));
 class Server {
     constructor() {
         this.port = port;
@@ -32,6 +33,9 @@ class Server {
         };
         this.notebooksPaths = {
             notebooks: '/notebooks'
+        };
+        this.pagesPaths = {
+            pages: '/pages'
         };
         this.app = (0, express_1.default)();
         this.port;
@@ -51,6 +55,7 @@ class Server {
         this.app.use(this.apiPaths.api, apiRouter_1.default);
         this.app.use(this.apiPaths.users, usersRouter_1.default);
         this.app.use(this.mainPaths.main, mainRouter_1.default);
+        this.app.use(this.pagesPaths.pages, pagesRouter_1.default);
         this.app.use(this.docsPaths.docs, docsRouter_1.default);
         this.app.use(this.notebooksPaths.notebooks, notebooksRouter_1.default);
     }

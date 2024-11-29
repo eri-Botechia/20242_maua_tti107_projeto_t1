@@ -4,6 +4,7 @@ import * as  mainController from '../controllers/mainController';
 const router = express.Router();
 
 
-router.get('/', mainController.getSlash);
+router.get('/', mainController.getMain);
+router.get('/pages/notebooks', mainController.getNotebooks);
 
 export default router;

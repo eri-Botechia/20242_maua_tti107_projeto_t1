@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 
-export const getSlash = async(req: Request, res: Response) => {
+export const getMain = async(req: Request, res: Response) => {
     res.status(200).sendFile('index.html', { root: 'public' });
 };
 
 
-export const getApi = async(req: Request, res: Response) => {
-    res.status(200).sendFile('api.html', { root: 'public' });
+export const getNotebooks = async(req: Request, res: Response) => {
+    res.sendFile('notebooks.html', { root: 'public' });
 };
 
 

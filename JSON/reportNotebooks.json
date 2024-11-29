@@ -8,7 +8,10 @@
             "img":"assets/notebooks/images/99df24aa-5237-41d2-bc5a-919c6771b583.png",
             "pdf":"assets/notebooks/pdfs/99df24aa-5237-41d2-bc5a-919c6771b583.pdf",
             "icons":"assets/notebooks/icons/99df24aa-5237-41d2-bc5a-919c6771b583.pdf", 
-            "video":""
+            "video":"",
+            "bookMain":"",
+            "bookCover":"",
+            "presentation":""
         },
         "orientation":"TP2-2024-1-MOO",
         "score":0,
@@ -16,14 +19,17 @@
         "dislikes":0
     },
     {
-        "id":"41ffd5d3-42e7-4be5-99c4-bbd952873155",
-        "title":"Notebook 2",
+        "id":"101212",
+        "title":"Banco de Dados Relacionais - Notas de Aula",
         "releaseYear":"2024",
         "author":"24.01905-4",
         "mediaEndpoint":{
-            "img":"/assets/notebooks/images/41ffd5d3-42e7-4be5-99c4-bbd952873155.png",
-            "pdf":"/assets/notebooks/pdfs/41ffd5d3-42e7-4be5-99c4-bbd952873155.pdf",
-            "video":""
+            "img":"/assets/notebooks/images/101212.png",
+            "pdf":"/assets/notebooks/pdfs/101212.pdf",
+            "video":"",
+            "bookMain":"assets/books/books/101212.pdf",
+            "bookCover":"assets/books/covers/101212.png",
+            "presentation":"assets/presentations/101212.pdf"
         },
         "orientation":"TP1-2024-1",
         "score":0,
@@ -38,7 +44,10 @@
         "mediaEndpoint":{
             "img":"/assets/notebooks/images/98424379-e8f2-46ba-8ae0-3b59bcdbfcd9.png",
             "pdf":"/assets/notebooks/pdfs/98424379-e8f2-46ba-8ae0-3b59bcdbfcd9.pdf",
-            "video":""
+            "video":"",
+            "bookMain":"",
+            "bookCover":"",
+            "presentation":""
         },
         "orientation":"TP1-2024-2-EUDI",
         "score":0,

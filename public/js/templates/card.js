@@ -3,7 +3,7 @@ import fetchDataObj from "../data/fetchData.js";
 const card = async () => {
     try {
         const [itemsList] = await Promise.all([fetchDataObj.notebooks]);
-        console.log('Fetched data:', itemsList); // Log the fetched data
+        console.log('Fetched data:', itemsList.result); // Log the fetched data
         if (!Array.isArray(itemsList.result)) {
             throw new Error('Data is not an array');
         }

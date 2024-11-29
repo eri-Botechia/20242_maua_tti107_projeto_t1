@@ -6,6 +6,7 @@ const BASE_URL = `http://localhost:9475`;
 const fetchData = (path = "") => {
     return fetch(`${BASE_URL}/${path}`)
         .then((response) => response.json())
+        
         .catch((error) => {
             console.log(error);
             return []; // Return an empty array on error
