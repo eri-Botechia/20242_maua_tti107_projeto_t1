@@ -4,8 +4,7 @@ import * as  usersController from '../../controllers/api/usersController';
 const router = express.Router();
 
 
-router.get('/', usersController.getSlash);
-router.get('/list', usersController.getAll);
+router.get('/', usersController.getAll);
 router.get('/:id', usersController.getItem);
 router.post('/', usersController.postItem);
 router.put('/:id', usersController.putItem);

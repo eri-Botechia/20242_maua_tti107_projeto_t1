@@ -11,25 +11,40 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const morgan_1 = __importDefault(require("morgan"));
 const path_1 = __importDefault(require("path"));
-const mainRouter_1 = __importDefault(require("../routes/mainRouter"));
-const productsRouter_1 = __importDefault(require("../routes/api/productsRouter"));
-const apiRouter_1 = __importDefault(require("../routes/apiRouter"));
+const tasksRouter_1 = __importDefault(require("../routes/api/tasksRouter"));
 const usersRouter_1 = __importDefault(require("../routes/api/usersRouter"));
-const docsRouter_1 = __importDefault(require("../routes/docs/docsRouter"));
+const pagesRouter_1 = __importDefault(require("../routes/pages/pagesRouter"));
+const ticketsRouter_1 = __importDefault(require("../routes/api/ticketsRouter"));
+const apiRouter_1 = __importDefault(require("../routes/api/apiRouter"));
+const collectionsRouter_1 = __importDefault(require("../routes/api/collectionsRouter"));
+const booksRouter_1 = __importDefault(require("../routes/api/booksRouter"));
+const notebooksRouter_1 = __importDefault(require("../routes/api/notebooksRouter"));
+const notebooksRouter_2 = __importDefault(require("../routes/pages/notebooksRouter"));
+const booksRouter_2 = __importDefault(require("../routes/pages/booksRouter"));
+const tasksRouter_2 = __importDefault(require("../routes/pages/tasksRouter"));
+const collectionsRouter_2 = __importDefault(require("../routes/pages/collectionsRouter"));
+const authRouter_1 = __importDefault(require("../routes/auth/authRouter"));
 class Server {
     constructor() {
         this.port = port;
-        this.mainPaths = {
-            main: '/'
+        this.pagesPaths = {
+            main: '/pages',
+            books: '/pages/books',
+            tasks: '/pages/tasks',
+            notebooks: '/pages/notebooks',
+            collections: '/pages/collections'
         };
         this.apiPaths = {
             api: '/api',
             users: '/api/users',
-            posts: '/api/posts',
-            products: '/api/products'
+            tickets: '/api/tickets',
+            tasks: '/api/tasks',
+            books: '/api/books',
+            notebooks: '/api/notebooks',
+            collections: '/api/collections'
         };
-        this.docsPaths = {
-            docs: '/docs'
+        this.userPaths = {
+            users: '/users'
         };
         this.app = (0, express_1.default)();
         this.port;
@@ -46,11 +61,19 @@ class Server {
         this.app.use(express_1.default.static(path_1.default.join('public')));
     }
     routes() {
+        this.app.use(this.pagesPaths.main, pagesRouter_1.default);
+        this.app.use(this.pagesPaths.notebooks, notebooksRouter_2.default);
+        this.app.use(this.pagesPaths.books, booksRouter_2.default);
+        this.app.use(this.pagesPaths.tasks, tasksRouter_2.default);
+        this.app.use(this.pagesPaths.collections, collectionsRouter_2.default);
         this.app.use(this.apiPaths.api, apiRouter_1.default);
         this.app.use(this.apiPaths.users, usersRouter_1.default);
-        this.app.use(this.mainPaths.main, mainRouter_1.default);
-        this.app.use(this.apiPaths.products, productsRouter_1.default);
-        this.app.use(this.docsPaths.docs, docsRouter_1.default);
+        this.app.use(this.apiPaths.tasks, tasksRouter_1.default);
+        this.app.use(this.apiPaths.tickets, ticketsRouter_1.default);
+        this.app.use(this.apiPaths.books, booksRouter_1.default);
+        this.app.use(this.apiPaths.notebooks, notebooksRouter_1.default);
+        this.app.use(this.apiPaths.collections, collectionsRouter_1.default);
+        this.app.use(this.userPaths.users, authRouter_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {

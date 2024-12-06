@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.POST_CATEGORIES = exports.ROLES = void 0;
+exports.ITEM_CATEGORY = exports.POST_CATEGORIES = exports.ROLES = void 0;
 var ROLES;
 (function (ROLES) {
     ROLES["ROLE_1"] = "idealizador";
@@ -17,4 +17,13 @@ var POST_CATEGORIES;
     POST_CATEGORIES["PRODUTO"] = "PRODUTO";
     POST_CATEGORIES["GALERIA"] = "GALERIA";
 })(POST_CATEGORIES || (exports.POST_CATEGORIES = POST_CATEGORIES = {}));
+var ITEM_CATEGORY;
+(function (ITEM_CATEGORY) {
+    ITEM_CATEGORY[ITEM_CATEGORY["PRESENTATION"] = 1] = "PRESENTATION";
+    ITEM_CATEGORY[ITEM_CATEGORY["NOTEBOOK"] = 2] = "NOTEBOOK";
+    ITEM_CATEGORY[ITEM_CATEGORY["BOOK"] = 3] = "BOOK";
+    ITEM_CATEGORY[ITEM_CATEGORY["TASK"] = 4] = "TASK";
+    ITEM_CATEGORY[ITEM_CATEGORY["COLLECTION"] = 5] = "COLLECTION";
+    ITEM_CATEGORY[ITEM_CATEGORY["BACKPACK"] = 6] = "BACKPACK";
+})(ITEM_CATEGORY || (exports.ITEM_CATEGORY = ITEM_CATEGORY = {}));
 //# sourceMappingURL=enums.js.map

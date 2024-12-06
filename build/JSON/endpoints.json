@@ -1,13 +1,13 @@
 {
     "message": "Endpoints disponiveis",
-    "endpoints": [
+    "result": [
         {
-            "id": "endpoint-001",
-            "controller": "getSlashRoot",
-            "BASE_URL": "http://localhost:9494",
-            "endpointRoot": "/",
+            "id": "endpoint-api-main-001",
+            "controller": "getMain",
+            "BASE_URL": "http://localhost:9475/api",
+            "endpointRoot": "/api/",
             "HTTPMethod": "GET",
-            "responseContent": "html",
+            "responseContent": "json/api",
             "status_code": 200,
             "description": "Endpoint com o metodo http GET , status code 200 e retorno de 'message' de descricao + array de objetos JSON con info de endpoints disponiveis"
         },
