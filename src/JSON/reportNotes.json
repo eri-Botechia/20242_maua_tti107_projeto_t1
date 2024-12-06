@@ -1,0 +1,23 @@
+[
+    {
+        "classroom": "TI-IMT-2024",
+        "colection": "reports",
+        "tags":[],
+        "id": "DBR-a001-TEO-001",
+        "index": 1,
+        "assignature": "DBR-DB-RELACIONAL",
+        "teacher": "MARCOS MAZZEI",
+        "bookReference": {
+            "id":"BK-0001",
+            "title": "BOOK-1",
+            "ISBN": "",
+            "coverUrl":"",
+            "author": "",
+            "edition":"",
+            "releaseYear": "",
+
+        },
+        "idNotebook":"NB-0001",
+        "title": ""
+    }
+]

@@ -14,3 +14,12 @@ export enum POST_CATEGORIES {
     GALERIA="GALERIA" 
  }
  
+
+ export enum ITEM_CATEGORY{
+    PRESENTATION=1,
+    NOTEBOOK=2,
+    BOOK=3,
+    TASK=4,
+    COLLECTION=5,
+    BACKPACK=6
+ }

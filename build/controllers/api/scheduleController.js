@@ -9,11 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteItem = exports.putItem = exports.postItem = exports.getItem = exports.getAll = exports.getSlash = void 0;
-const getSlash = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.deleteItem = exports.putItem = exports.postItem = exports.getItem = exports.getAll = exports.getIndex = void 0;
+const getIndex = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.status(200).json({ message: 'Hello, CLUB' });
 });
-exports.getSlash = getSlash;
+exports.getIndex = getIndex;
 const getAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.status(200).json({ message: 'LIST' });
 });

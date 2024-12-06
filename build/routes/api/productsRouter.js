@@ -37,13 +37,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const productsController = __importStar(require("./../../controllers/api/productsController"));
+const tasksController = __importStar(require("./../../controllers/api/tasksController"));
 const router = express_1.default.Router();
-router.get('/', productsController.getCollection);
-router.get('/list', productsController.getAll);
-router.get('/item/:id', productsController.getItem);
-router.post('/', productsController.postItem);
-router.put('/:id', productsController.putItem);
-router.delete('/:id', productsController.deleteItem);
+router.get('/', tasksController.getIndex);
+router.get('/item/:id', tasksController.getItem);
+router.post('/', tasksController.postItem);
+router.put('/:id', tasksController.putItem);
+router.delete('/:id', tasksController.deleteItem);
 exports.default = router;
 //# sourceMappingURL=productsRouter.js.map

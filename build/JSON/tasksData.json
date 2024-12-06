@@ -1,0 +1,14 @@
+{
+    "result": [{
+            "id": 1,
+            "aula": 1,
+            "codigo": "2401905-4-1-2024-768872ac-35ed-4ef2-922b-3b039317f4ba",
+            "titulo": "BDR : BANCO DE DADOS RELACIONAL TEO-LAB",
+            "professor": "MARCOS MAZZEI",
+            "tipo": 1,
+            "tax": 1,
+            "presentations": "backpack/slides/slide-1",
+            "books": "backpack/books/book-1",
+            "notebooks": "backpack/notebooks/notebook-1"
+        }]
+}

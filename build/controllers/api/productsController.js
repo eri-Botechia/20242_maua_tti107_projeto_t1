@@ -9,11 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteItem = exports.putItem = exports.postItem = exports.getItem = exports.getAll = exports.getCollection = void 0;
-const getCollection = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const COLLECTIONS_HTML = res.status(200).sendFile("/pages/products.html", { root: 'public' });
-});
-exports.getCollection = getCollection;
+exports.deleteItem = exports.putItem = exports.postItem = exports.getItem = exports.getAll = void 0;
 const getAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.status(200).json({ message: 'LIST' });
 });

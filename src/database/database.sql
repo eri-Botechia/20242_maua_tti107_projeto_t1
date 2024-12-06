@@ -1,3 +1,4 @@
+-- Active: 1733439911569@@127.0.0.1@3306
 CREATE TABLE countries (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   iso VARCHAR(2) NOT NULL,
@@ -8,7 +9,7 @@ CREATE TABLE countries (
   phonecode INTEGER NOT NULL
 );
 DROP TABLE country;
-
+SELECT * FROM countries;
 INSERT INTO countries (id, iso, name, nicename, iso3, numcode, phonecode) VALUES
 (1, 'AF', 'AFGHANISTAN', 'Afghanistan', 'AFG', 4, 93),
 (2, 'AL', 'ALBANIA', 'Albania', 'ALB', 8, 355),
@@ -227,7 +228,7 @@ INSERT INTO countries (id, iso, name, nicename, iso3, numcode, phonecode) VALUES
 (215, 'TO', 'TONGA', 'Tonga', 'TON', 776, 676),
 (216, 'TT', 'TRINIDAD AND TOBAGO', 'Trinidad and Tobago', 'TTO', 780, 1868),
 (217, 'TN', 'TUNISIA', 'Tunisia', 'TUN', 788, 216),
-(218, 'TR', 'TURKEY', 'Turkey', 'TUR', 792, 90),
+(218, 'TR', 'TURKEY', 'Turmatricula', 'TUR', 792, 90),
 (219, 'TM', 'TURKMENISTAN', 'Turkmenistan', 'TKM', 795, 7370),
 (220, 'TC', 'TURKS AND CAICOS ISLANDS', 'Turks and Caicos Islands', 'TCA', 796, 1649),
 (221, 'TV', 'TUVALU', 'Tuvalu', 'TUV', 798, 688),
@@ -302,6 +303,7 @@ CREATE TABLE cities (
     ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+
 INSERT INTO cities (name, UF_states)
 VALUES
 ('São Paulo', 'SP'),
@@ -336,214 +338,114 @@ VALUES
 
 SELECT * FROM cities;
 
-
-CREATE TABLE NEIGHBORHOOD (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name VARCHAR(100) NOT NULL,
-    city_id INTEGER NOT NULL,
-    FOREIGN KEY (city_id) REFERENCES cities(id)
+CREATE TABLE bairros (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   name VARCHAR(100) NOT NULL,
+   city_id INTEGER NOT NULL,
+   FOREIGN KEY (city_id) REFERENCES cities(id)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
-SELECT * FROM "NEIGHBORHOOD";
+
+CREATE TABLE CEPs (
+    CEP VARCHAR(25) NOT NULL ,
+    ID_ESTADO INTEGER NOT NULL,
+    id_countries INTEGER NOT NULL,
+    ID_CIDADES INTEGER NOT NULL,
+    id_bairros INTEGER NOT NULL,
+    FOREIGN KEY (id_ESTADO, id_countries, id_cidades, id_bairros) REFERENCES states(UF, id_countries, id_cidades, id_bairros) 
+    ON UPDATE CASCADE ON DELETE CASCADE
+);
 
 
-SELECT * FROM locations;
-CREATE TABLE locations (
+
+CREATE TABLE tipos_logradouro(
+    codigo VARCHAR(50) NOT NULL UNIQUE PRIMARY KEY,
+    tipo VARCHAR(50) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE tipos_complemento(
+    codigo VARCHAR(50) NOT NULL UNIQUE PRIMARY KEY,
+    tipo VARCHAR(50) NOT NULL UNIQUE
+);
+
+SELECT * FROM logradouros;
+DROP TABLE logradouros;
+CREATE TABLE logradouros (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    location VARCHAR(100) NOT NULL,
-    location_number INTEGER NOT NULL,
-    type_complement VARCHAR(100),
+    codigo_tipos_logradouro VARCHAR(30) NOT NULL,
+    logradouro VARCHAR(250) NOT NULL,
+    codigo_tipos_complemento VARCHAR(30) DEFAULT NULL,
     complement VARCHAR(100),
-    NEIGHBORHOOD_id INTEGER NOT NULL,
-    city_id INTEGER NOT NULL,
-    FOREIGN KEY (city_id) REFERENCES cities(id)
+    nome_responsavel VARCHAR(255) NOT NULL,
+    id_usuarios INTEGER DEFAULT NULL,
+    FOREIGN KEY (codigo_tipos_complemento) REFERENCES tipos_complemento(codigo)
+    ON UPDATE CASCADE ON DELETE CASCADE ,
+    FOREIGN KEY (codigo_tipos_logradouro) REFERENCES tipos_logradouro(codigo_tipos_complemento)
+    ON UPDATE CASCADE ON DELETE CASCADE
+    , FOREIGN KEY (id_usuarios) REFERENCES usuarios(id)
+);
+
+
+
+
+CREATE TABLE usuarios(
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+    nome_completo CHAR(1000) NOT NULL,
+    data_nascimento DATE NOT NULL ,
+    password_hash VARCHAR(120) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+DROP TABLE profiles;
+CREATE TABLE profiles (
+    username VARCHAR(60) NOT NULL UNIQUE PRIMARY KEY,
+    id_usuarios INTEGER NOT NULL,
+    matricula_professor INTEGER DEFAULT NULL,
+    matricula_instrutor INTEGER DEFAULT NULL,
+    matricula_admin INTEGER DEFAULT NULL,
+    matricula_aluno INTEGER DEFAULT NULL,
+        imgUrl VARCHAR(255) NULL,
+    coverUrl VARCHAR(255) NULL,
+    FOREIGN KEY (matricula_professor) REFERENCES professores(matricula)
     ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (NEIGHBORHOOD_id) REFERENCES NEIGHBORHOOD(id)
+    FOREIGN KEY (matricula_instrutor) REFERENCES instrutores(matricula)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (matricula_admin) REFERENCES administradores(matricula)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (matricula_aluno) REFERENCES aluno(matricula)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (id_usuarios) REFERENCES usuarios(id)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
 
- CREATE TABLE addresses (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    address_tag VARCHAR(100) NOT NULL,
-    location_id INTEGER NOT NULL,
-    FOREIGN KEY (location_id) REFERENCES locations(id)
+
+SELECT * FROM profiles;
+
+
+CREATE TABLE telefone(
+     nro_telefone VARCHAR(100) NOT NULL PRIMARY KEY ,
+     id_usuarios INTEGER NOT NULL,
+     is_whatsapp BLOB(1) NOT NULL DEFAULT 1, 
+     FOREIGN KEY (id_usuarios) REFERENCES usuarios(id)
+     ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE email(
+    email VARCHAR(255) NOT NULL PRIMARY KEY UNIQUE,
+    id_usuarios INTEGER NOT NULL,
+     is_primary_email BLOB(1) DEFAULT 1,
+    FOREIGN KEY (id_usuarios) REFERENCES usuarios(id)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
-DROP TABLE addresses;
-CREATE TABLE days_of_week(
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    abvr VARCHAR(3) NOT NULL UNIQUE,
-    day VARCHAR(100) NOT NULL UNIQUE
-);
-
-INSERT INTO days_of_week (abvr, day) VALUES
-    ('DOM', 'Domingo'),
-    ('SEG', 'Segunda-Feira'),
-    ('TER', 'Terça-Feira'),
-    ('QUA', 'Quarta-Feira'),
-    ('QUI', 'Quinta-Feira'),
-    ('SEX', 'Sexta-Feira'),
-    ('SAB', 'Sábado');
-
-DROP TABLE days_of_week;
-CREATE TABLE full_hours (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    hour VARCHAR(5) NOT NULL UNIQUE
-);
-drop table full_hours;
-INSERT INTO full_hours (hour) VALUES
-('00:00'),
-('01:00'),
-('02:00'),
-('03:00'),
-('04:00'),
-('05:00'),
-('06:00'),
-('07:00'),
-('08:00'),
-('09:00'),
-('10:00'),
-('11:00'),
-('12:00'),
-('13:00'),
-('14:00'),
-('15:00'),
-('16:00'),
-('17:00'),
-('18:00'),
-('19:00'),
-('20:00'),
-('21:00'),
-('22:00'),
-('23:00');
-
-CREATE TABLE full_minutes (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    minute VARCHAR(5) NOT NULL UNIQUE
-);
-
-INSERT INTO full_minutes (minute) VALUES
-('00'),
-('01'),
-('02'),
-('03'),
-('04'),
-('05'),
-('06'),
-('07'),
-('08'),
-('09'),
-('10'),
-('11'),
-('12'),
-('13'),
-('14'),
-('15'),
-('16'),
-('17'),
-('18'),
-('19'),
-('20'),
-('21'),
-('22'),
-('23'),
-('24'),
-('25'),
-('26'),
-('27'),
-('28'),
-('29'),
-('30'),
-('31'),
-('32'),
-('33'),
-('34'),
-('35'),
-('36'),
-('37'),
-('38'),
-('39'),
-('40'),
-('41'),
-('42'),
-('43'),
-('44'),
-('45'),
-('46'),
-('47'),
-('48'),
-('49'),
-('50'),
-('51'),
-('52'),
-('53'),
-('54'),
-('55'),
-('56'),
-('57'),
-('58'),
-('59');
 
 
-CREATE TABLE months_of_year (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    abvr VARCHAR(3) NOT NULL UNIQUE,
-    month VARCHAR(20) NOT NULL UNIQUE
-);
-
-INSERT INTO months_of_year (abvr, month) VALUES
-('JAN', 'Janeiro'),
-('FEV', 'Fevereiro'),
-('MAR', 'Março'),
-('ABR', 'Abril'),
-('MAI', 'Maio'),
-('JUN', 'Junho'),
-('JUL', 'Julho'),
-('AGO', 'Agosto'),
-('SET', 'Setembro'),
-('OUT', 'Outubro'),
-('NOV', 'Novembro'),
-('DEZ', 'Dezembro');
-
-CREATE TABLE days_of_month (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    day VARCHAR(2) NOT NULL UNIQUE
-);
-
-INSERT INTO days_of_month (day) VALUES
-('01'),
-('02'),
-('03'),
-('04'),
-('05'),
-('06'),
-('07'),
-('08'),
-('09'),
-('10'),
-('11'),
-('12'),
-('13'),
-('14'),
-('15'),
-('16'),
-('17'),
-('18'),
-('19'),
-('20'),
-('21'),
-('22'),
-('23'),
-('24'),
-('25'),
-('26'),
-('27'),
-('28'),
-('29'),
-('30'),
-('31');
-
-
-CREATE TABLE users(
-    id VA
+CREATE TABLE instituicoes(
+    cnpjOuCodigo VARCHAR(20) NOT NULL UNIQUE PRIMARY KEY,
+    nome VARCHAR(120) NOT NULL PRIMARY KEY,
+    id_logradouro INTEGER DEFAULT NULL,
+    logo_url VARCHAR(200) NOT NULL,
+    img_url VARCHAR(200) NOT NULL,
+    description VARCHAR(140) NOT NULL 
 )
+
